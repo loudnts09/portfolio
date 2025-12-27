@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Fira Code', 'Courier New', monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-white dark:bg-dark-900 text-dark-900 dark:text-dark-50 antialiased transition-colors duration-300;
+    font-family: var(--font-inter);
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-primary-600 text-white rounded-lg font-medium 
+           transition-all duration-300 hover:bg-primary-700 hover:shadow-lg 
+           active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-transparent border-2 border-primary-600 text-primary-600 
+           rounded-lg font-medium transition-all duration-300 
+           hover:bg-primary-600 hover:text-white active:scale-95;
+  }
+  
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-dark-50 mb-4;
+  }
+  
+  .section-subtitle {
+    @apply text-lg md:text-xl text-dark-600 dark:text-dark-300 mb-12 max-w-2xl mx-auto text-center;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r 
+           from-primary-600 via-primary-500 to-primary-400;
+    background-size: 200% auto;
+    animation: gradient 3s ease infinite;
+  }
+  
+  .glass {
+    @apply bg-white/80 dark:bg-dark-800/80 backdrop-blur-md border border-white/20 dark:border-dark-700/20;
+  }
+  
+  .shadow-soft {
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  .dark .shadow-soft {
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
+
